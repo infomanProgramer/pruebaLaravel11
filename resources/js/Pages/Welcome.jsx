@@ -1,69 +1,61 @@
+//Basic horizontal menu to understanding Tailwind basic concepts.
+
 import { Link, Head } from "@inertiajs/react";
 
-const people = [
-    {
-        name: "Calvin Hawkins",
-        email: "calvin.hawkins@example.com",
-        image: "https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-        name: "Kristen Ramos",
-        email: "kristen.ramos@example.com",
-        image: "https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-    {
-        name: "Ted Fox",
-        email: "ted.fox@example.com",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    },
-];
-
 export default function Welcome({ auth, laravelVersion, phpVersion }) {
-    const handleImageError = () => {
-        document
-            .getElementById("screenshot-container")
-            ?.classList.add("!hidden");
-        document.getElementById("docs-card")?.classList.add("!row-span-1");
-        document
-            .getElementById("docs-card-content")
-            ?.classList.add("!flex-row");
-        document.getElementById("background")?.classList.add("!hidden");
-    };
-
     return (
         <>
             <Head title="Welcome" />
-            <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
-                <div class="shrink-0">
-                    <img
-                        class="size-12"
-                        src="/img/logo.svg"
-                        alt="ChitChat Logo"
-                    />
-                </div>
-                <div>
-                    <div class="text-xl font-medium text-black">ChitChat</div>
-                    <p class="text-slate-500">You have a new message!</p>
-                </div>
+            <div class="flex flex-row max-sm:flex-col bg-red-300 w-full h-20 justify-center items-center gap-x-2 ">
+                {/* <div class="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-indigo-500 text-center align-middle hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full">
+                    Inicio
+                </div> */}
+                <Link
+                    href={route("login")}
+                    className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-indigo-500 text-center align-middle hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full"
+                >
+                    Login
+                </Link>
+                <Link
+                    href={route("register")}
+                    className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-green-600 text-center hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full"
+                >
+                    Registrar
+                </Link>
+                <Link
+                    href={route("portafolio")}
+                    className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-yellow-400 text-center hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full"
+                >
+                    Portafolio
+                </Link>
             </div>
-            <div class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
-                <img
-                    class="block mx-auto h-24 rounded-full sm:mx-0 sm:shrink-0"
-                    src="/img/erin-lindford.jpg"
-                    alt="Woman's Face"
-                />
-                <div class="text-center space-y-2 sm:text-left">
-                    <div class="space-y-0.5">
-                        <p class="text-lg text-black font-semibold">
-                            Erin Lindford
-                        </p>
-                        <p class="text-slate-500 font-medium">
-                            Product Engineer
-                        </p>
+            <div>
+                <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+                    <div class="md:flex">
+                        <div class="md:shrink-0">
+                            <img
+                                class="h-48 w-full object-cover md:h-full md:w-48"
+                                src="/img/building.jpg"
+                                alt="Modern building architecture"
+                            />
+                        </div>
+                        <div class="p-8">
+                            <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
+                                Company retreats
+                            </div>
+                            <a
+                                href="#"
+                                class="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+                            >
+                                Incredible accommodation for your team
+                            </a>
+                            <p class="mt-2 text-slate-500">
+                                Looking to take your team away on a retreat to
+                                enjoy awesome food and take in some sunshine? We
+                                have a list of places to do just that.
+                            </p>
+                        </div>
                     </div>
-                    <button class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
-                        Message
-                    </button>
                 </div>
             </div>
         </>

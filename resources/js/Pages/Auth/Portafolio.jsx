@@ -1,5 +1,6 @@
 import { Head, Link, useForm } from "@inertiajs/react";
 import GuestLayout from "@/Layouts/GuestLayout";
+import Welcome from "@/Pages/Welcome";
 
 export default function Portafolio({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -17,10 +18,10 @@ export default function Portafolio({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
+        <Welcome>
             <Head title="Portafolio" />
 
             <h1>Este es mi primer portafolio</h1>
-        </GuestLayout>
+        </Welcome>
     );
 }

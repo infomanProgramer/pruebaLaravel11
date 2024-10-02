@@ -1,5 +1,6 @@
 import Checkbox from "@/Components/Checkbox";
 import GuestLayout from "@/Layouts/GuestLayout";
+import Welcome from "@/Pages/Welcome";
 import InputError from "@/Components/InputError";
 import InputLabel from "@/Components/InputLabel";
 import PrimaryButton from "@/Components/PrimaryButton";
@@ -22,10 +23,10 @@ export default function Login({ status, canResetPassword }) {
     };
 
     return (
-        <GuestLayout>
+        <Welcome>
             <Head title="Log in" />
 
             <h1>hola como estas</h1>
-        </GuestLayout>
+        </Welcome>
     );
 }

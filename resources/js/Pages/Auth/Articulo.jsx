@@ -2,7 +2,7 @@ import { Head, Link, useForm } from "@inertiajs/react";
 import GuestLayout from "@/Layouts/GuestLayout";
 import Welcome from "@/Pages/Welcome";
 
-export default function Portafolio({ status, canResetPassword }) {
+export default function Articulo({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
@@ -12,16 +12,16 @@ export default function Portafolio({ status, canResetPassword }) {
     const submit = (e) => {
         e.preventDefault();
 
-        post(route("portafolio"), {
+        post(route("articulo"), {
             onFinish: () => reset("password"),
         });
     };
 
     return (
         <Welcome>
-            <Head title="Portafolio" />
+            <Head title="Articulo" />
 
-            <h1>Este es mi primer portafolio</h1>
+            <h1>Aca se van a cargar todos los articulos de forma dinamica</h1>
         </Welcome>
     );
 }

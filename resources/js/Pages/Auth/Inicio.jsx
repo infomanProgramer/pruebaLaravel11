@@ -7,26 +7,18 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import TextInput from "@/Components/TextInput";
 import { Head, Link, useForm } from "@inertiajs/react";
 
-export default function Login({ status, canResetPassword }) {
+export default function Inicio({ status, canResetPassword }) {
     const { data, setData, post, processing, errors, reset } = useForm({
         email: "",
         password: "",
         remember: false,
     });
 
-    const submit = (e) => {
-        e.preventDefault();
-
-        post(route("login"), {
-            onFinish: () => reset("password"),
-        });
-    };
-
     return (
         <Welcome>
-            <Head title="Log in" />
+            <Head title="Inicio" />
 
-            <h1>hola como estas</h1>
+            <h1>Una descripción de About me</h1>
         </Welcome>
     );
 }

@@ -2,6 +2,28 @@
 
 import { Link, Head } from "@inertiajs/react";
 
+const menuArray = [
+    {
+        id: 1,
+        descripcion: "Inicio",
+        url: "inicio",
+    },
+    {
+        id: 2,
+        descripcion: "Docker",
+        url: "articulo",
+    },
+    {
+        id: 3,
+        descripcion: "CSS",
+        url: "articulo",
+    },
+    {
+        id: 4,
+        descripcion: "PHP",
+        url: "articulo",
+    },
+];
 export default function Welcome({
     auth,
     laravelVersion,
@@ -11,29 +33,20 @@ export default function Welcome({
     return (
         <>
             <Head title="Welcome" />
-            <div class="flex flex-row max-sm:flex-col bg-red-300 w-full h-20 justify-center items-center gap-x-2 ">
-                {/* <div class="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-indigo-500 text-center align-middle hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full">
-                    Inicio
-                </div> */}
-                <Link
-                    href={route("login")}
-                    className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-indigo-500 text-center align-middle hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full"
-                >
-                    Login
-                </Link>
-                <Link
-                    href={route("register")}
-                    className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-green-600 text-center hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full"
-                >
-                    Registrar
-                </Link>
-                <Link
-                    href={route("portafolio")}
-                    className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl bg-yellow-400 text-center hover:bg-red-950 hover:text-white max-sm:rounded-none max-sm:w-full"
-                >
-                    Portafolio
-                </Link>
-            </div>
+            {/* <div class="flex flex-row max-sm:flex-col bg-red-300 w-full h-20 justify-center items-center gap-x-2 "> */}
+            <nav class="flex flex-row bg-stone-800 w-full h-24 justify-center">
+                <div class="flex flex-row w-4/5 h-full justify-start items-center gap-x-2">
+                    {menuArray.map((item) => (
+                        <Link
+                            key={item.id}
+                            href={route(item.url)}
+                            className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl text-white text-center align-middle hover:text-port-green max-sm:rounded-none max-sm:w-full text-xl font-semibold"
+                        >
+                            {item.descripcion}
+                        </Link>
+                    ))}
+                </div>
+            </nav>
             <div>{children}</div>
         </>
     );

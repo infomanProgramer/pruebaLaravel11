@@ -1,27 +1,43 @@
 //Basic horizontal menu to understanding Tailwind basic concepts.
 
 import { Link, Head } from "@inertiajs/react";
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
 
 const menuArray = [
     {
         id: 1,
         descripcion: "Inicio",
         url: "inicio",
+        submenu: [],
     },
     {
         id: 2,
         descripcion: "Docker",
         url: "articulo",
+        submenu: [],
     },
     {
         id: 3,
         descripcion: "CSS",
         url: "articulo",
+        submenu: [
+            {
+                id: 31,
+                descripcion: "Tailwind",
+                url: "articulo",
+            },
+            {
+                id: 32,
+                descripcion: "Flexbox",
+                url: "articulo",
+            },
+        ],
     },
     {
         id: 4,
         descripcion: "PHP",
         url: "articulo",
+        submenu: [],
     },
 ];
 export default function Welcome({
@@ -40,9 +56,14 @@ export default function Welcome({
                         <Link
                             key={item.id}
                             href={route(item.url)}
-                            className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl text-white text-center align-middle hover:text-port-green max-sm:rounded-none max-sm:w-full text-xl font-semibold"
+                            className="flex flex-row justify-center items-center w-48 h-16 rounded-3xl text-white text-center align-middle hover:text-port-green max-sm:rounded-none max-sm:w-full text-xl font-semibold gap-x-3"
                         >
                             {item.descripcion}
+                            {item.submenu.length > 1 ? (
+                                <ChevronLeftIcon className="size-5 text-white text-base hover:text-port-green" />
+                            ) : (
+                                ""
+                            )}
                         </Link>
                     ))}
                 </div>

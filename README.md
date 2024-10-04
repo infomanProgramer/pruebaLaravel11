@@ -52,3 +52,9 @@ npm run dev
 Revisar video:
 
 https://www.youtube.com/watch?v=_CntOc4hBcg
+
+### Iconos para Tailwind
+
+Para la visualización de logos de iconos ver: https://heroicons.com/outline
+
+Link para encontrar el nombre de componente del icono https://unpkg.com/browse/@heroicons/react@2.1.5/16/solid/
